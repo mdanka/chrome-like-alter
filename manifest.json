@@ -1,7 +1,8 @@
 {
   "name": "I'll Allow It",
-  "description": "I'll Allow It",
+  "description": "Changes Facebook Like and Unlike buttons to more truthful alternatives",
   "version": "1.0",
+  "icons": { "128": "hashtag.png" },
   "content_scripts": [
     {
       "matches": ["https://www.facebook.com/*"],
@@ -10,7 +11,7 @@
     }
   ],
   "browser_action": {
-    "default_title": "Allow It!"
+    "default_title": "I'll Allow It"
   },
   "manifest_version": 2
 }
