@@ -1,0 +1,16 @@
+{
+  "name": "I'll Allow It",
+  "description": "I'll Allow It",
+  "version": "1.0",
+  "content_scripts": [
+    {
+      "matches": ["https://www.facebook.com/*"],
+      "js": ["jquery-2.1.4.min.js", "main.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "browser_action": {
+    "default_title": "Allow It!"
+  },
+  "manifest_version": 2
+}
