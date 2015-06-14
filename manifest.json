@@ -1,5 +1,6 @@
 {
   "name": "I'll Allow It",
+  "short_name": "I'll Allow It",
   "description": "Changes Facebook Like and Unlike buttons to more truthful alternatives",
   "version": "1.0",
   "icons": { "128": "hashtag.png" },
