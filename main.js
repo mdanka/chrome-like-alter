@@ -16,17 +16,40 @@ function getUnlikeText() {
     }
 }
 
+// Returns null if the text should not be replaced
+function getReplacementText(originalText) {
+    // Main post like button, comment like button
+    if (originalText === 'Like') {
+        return getLikeText();
+    }
+    if (originalText === 'Unlike') {
+        return getUnlikeText();
+    }
+    // Main post like count
+    if (originalText === ' likes this.') {
+        return ' allows this.';
+    }
+    if (originalText === ' like this.') {
+        return ' allow this.';
+    }
+    return null;
+}
+
+function replaceElementText(element) {
+    var text = $(element).html();
+    var newText = getReplacementText(text);
+    if (newText) {
+        $(element).html(newText);
+    }
+}
+
 function replaceLikes() {
     var spans = $('span');
-    for (var i = 0; i < spans.length; i++) {
-        var span = spans[i];
-        var text = $(span).html();
-        if (text === 'Like') {
-            $(span).html(getLikeText());
-        }
-        if (text === 'Unlike') {
-            $(span).html(getUnlikeText());
-        }
+    var anchors = $('a');
+    var elements = spans.add(anchors);
+    for (var i = 0; i < elements.length; i++) {
+        var element = elements[i];
+        replaceElementText(element);
     }
 }
 
