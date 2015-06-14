@@ -10,9 +10,9 @@ function getLikeText() {
 function getUnlikeText() {
     var random = Math.random();
     if (random < 0.5) {
-        return 'I won\'t allow it';
+        return 'I disallow it';
     } else {
-        return 'I don\'t validate your existence';
+        return 'I invalidate your existence';
     }
 }
 
